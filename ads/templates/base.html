@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <title>{% block title %}IFRO TADS{% endblock %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'ads/css/style.css' %}">
+    <script src="https://unpkg.com/lucide@latest"></script>
+  </head>
+  <body>
+
+    {% include "partials/header.html" %}
+    {% block content %}{% endblock %}
+    {% include "partials/footer.html" %}
+
+    <script>
+      lucide.createIcons();
+    </script>
+  </body>
+</html>
