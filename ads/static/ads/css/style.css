@@ -1,0 +1,509 @@
+/* ================= RESET ================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ================= GERAL ================= */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #000;
+  color: #fff;
+}
+
+/* ================= HEADER ================= */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 60px;
+  background-color: #111;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-img {
+  height: 40px;
+  width: auto;
+}
+
+.logo-text {
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #0f0;
+}
+
+.menu {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.menu li a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.menu li a:hover {
+  color: #0f0;
+}
+
+/* ================= HERO ================= */
+.hero {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8)),
+              url('/static/ads/img/17926.jpg') no-repeat center center/cover;
+  text-align: center;
+  padding: 20px;
+  color: #fff;
+}
+
+.hero-content {
+  max-width: 800px;
+  padding: 20px;
+  /* Removido o fundo para deixar o texto diretamente sobre a imagem */
+  border-radius: 12px;
+}
+
+.hero-content h1 {
+  font-size: 3.2em;
+  margin-bottom: 20px;
+  color: #fff; /* Alterado de verde para branco para maior contraste */
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
+}
+
+.hero-content p {
+  font-size: 1.4em;
+  margin-bottom: 30px;
+  color: #ccc;
+  line-height: 1.6;
+}
+
+.btn-hero {
+  background-color: #0f0;
+  color: #000;
+  padding: 14px 28px;
+  font-size: 1em;
+  border-radius: 8px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 255, 0, 0.3);
+}
+
+.btn-hero:hover {
+  background-color: #0c0;
+  transform: scale(1.05);
+  box-shadow: 0 6px 18px rgba(0, 255, 0, 0.4);
+}
+
+/* ================= SOBRE ================= */
+.sobre {
+  background-color: #111;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.sobre .container {
+  max-width: 1200px; /* aumentei para caber 4 cards */
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.sobre h2 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  color: #0f0;
+}
+
+.sobre .intro {
+  font-size: 1.2em;
+  line-height: 1.8;
+  color: #ccc;
+  margin-bottom: 50px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.sobre-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 por linha */
+  gap: 30px;
+  justify-items: center;
+}
+
+.sobre-item {
+  background-color: #1a1a1a;
+  border: 1px solid #333;
+  border-radius: 10px;
+  padding: 30px 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  max-width: 260px; /* menor para caber 4 cards confortavelmente */
+  text-align: center; /* centraliza texto */
+}
+
+.sobre-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 255, 0, 0.15);
+}
+
+.sobre-item h3 {
+  color: #0f0; /* verde padrão */
+  font-size: 1.3em;
+  margin-bottom: 10px; /* espaço entre título e texto */
+}
+
+.sobre-item p {
+  margin-top: 10px; /* separação do título */
+  color: #ccc;
+  font-size: 0.95em;
+  line-height: 1.5;
+}
+
+
+/* ================= DOCUMENTOS ================= */
+.documentos {
+  background-color: #000;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.documentos h2 {
+  font-size: 2.5em;
+  margin-bottom: 10px;
+  color: #0f0;
+}
+
+.documentos p {
+  color: #aaa;
+  margin-bottom: 40px;
+  font-size: 1.1em;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.doc-cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 cards fixos em telas grandes */
+  gap: 20px 25px;
+  justify-items: center;
+}
+
+.doc-card {
+  background-color: #111;
+  border: 1px solid #333;
+  border-radius: 10px;
+  padding: 15px 10px;
+  width: 100%;
+  max-width: 220px;
+  min-height: 220px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s;
+  text-align: center; /* centraliza todo o conteúdo */
+}
+
+.doc-card:hover {
+  transform: translateY(-5px);
+  border-color: #0f0;
+  box-shadow: 0 4px 20px rgba(0,255,0,0.2);
+}
+
+.doc-card .icon {
+  display: none; /* ocultamos o ícone para ganhar espaço */
+}
+
+.doc-card h3 {
+  color: #0f0;
+  margin-bottom: 8px;
+  font-size: 1.1em;
+}
+
+.doc-card p {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #ccc;
+  font-size: 0.9em;
+  flex-grow: 1;
+  margin-bottom: 15px;
+  line-height: 1.4;
+}
+
+.btn-doc {
+  display: inline-block;
+  padding: 8px 16px;
+  background-color: #0f0;
+  color: #000;
+  font-weight: bold;
+  border-radius: 6px;
+  text-decoration: none;
+  box-shadow: 0 2px 6px rgba(0,255,0,0.2);
+  transition: background 0.3s, transform 0.3s;
+  align-self: center;
+  font-size: 0.9em;
+  min-width: 110px;
+}
+
+.btn-doc:hover {
+  background-color: #0c0;
+  transform: scale(1.05);
+}
+
+/* ================ CONTATOS ================ */
+.contatos-section {
+  padding: 60px 20px;
+  background-color: #111; /* fundo escuro, igual ao header e seção sobre */
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2.2rem;
+  margin-bottom: 10px;
+  color: #0f0; /* verde vibrante */
+}
+
+.section-subtitle {
+  text-align: center;
+  font-size: 1rem;
+  margin-bottom: 40px;
+  color: #aaa; /* cinza claro */
+}
+
+.contatos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.contato-card {
+  background-color: #1a1a1a; /* fundo escuro do card */
+  padding: 20px;
+  border-radius: 14px;
+  box-shadow: 0 2px 8px rgba(0, 255, 0, 0.15); /* sombra verde */
+  transition: transform 0.3s ease;
+}
+
+.contato-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0, 255, 0, 0.3);
+}
+
+.contato-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: #0f0; /* verde vibrante */
+}
+
+.contato-card p {
+  font-size: 0.95rem;
+  color: #ccc; /* texto claro */
+  margin-bottom: 6px;
+  line-height: 1.5;
+}
+
+.contato-card a {
+  color: #b6ff00; /* verde claro para links */
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.contato-card a:hover {
+  text-decoration: underline;
+  color: #d4ff5a; /* verde ainda mais claro no hover */
+}
+
+/* Ícones com cor verde vibrante para combinar */
+.icon {
+  width: 16px;
+  height: 16px;
+  vertical-align: middle;
+  margin-right: 6px;
+  color: #0f0;
+}
+
+
+/* ================= FOOTER ================= */
+.footer {
+  background-color: #111;
+  color: #ccc;
+  padding: 40px 20px;
+  border-top: 1px solid #333;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.footer-logo-img {
+  width: 220px; /* logo maior */
+  height: auto;
+  flex-shrink: 0;
+}
+
+.footer-content {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  flex: 1;
+  min-width: 250px;
+  color: #888;
+  font-size: 1em;
+}
+
+.footer-content p {
+  margin: 0;
+}
+
+.footer-social {
+  display: flex;
+  gap: 15px;
+}
+
+.footer-social a {
+  color: #0f0;
+  font-size: 28px;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.footer-social a:hover {
+  transform: scale(1.2);
+  color: #b6ff00;
+}
+
+/* Responsivo para telas pequenas */
+@media (max-width: 767px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+
+  .footer-logo-img {
+    width: 180px;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+  }
+}
+
+
+/* ================= RESPONSIVO ================= */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .menu {
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+  }
+
+  .hero-content h1 {
+    font-size: 2em;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  /* Ajustes importantes para os grids das seções */
+  .sobre-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 cards por linha */
+  }
+
+  .doc-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .contatos-grid {
+    grid-template-columns: 1fr; /* 1 card por linha */
+  }
+
+  /* Ajuste de títulos para melhor visualização em telas pequenas */
+  .section-title {
+    font-size: 1.8rem;
+  }
+
+  .section-subtitle {
+    font-size: 0.9rem;
+  }
+
+  .sobre-item, .doc-card, .contato-card {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Para telas ainda menores, tipo celulares pequenos */
+  .sobre-grid,
+  .doc-cards {
+    grid-template-columns: 1fr; /* 1 card por linha */
+  }
+
+  .hero-content h1 {
+    font-size: 1.5em;
+  }
+
+  .section-title {
+    font-size: 1.5rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .footer-container {
+    flex-direction: row;
+    justify-content: space-between;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .sobre-grid {
+    grid-template-columns: repeat(4, 1fr); /* volta aos 4 cards por linha */
+  }
+
+  .doc-cards {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .contatos-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+}
